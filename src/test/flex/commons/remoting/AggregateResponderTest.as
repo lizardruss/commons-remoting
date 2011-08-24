@@ -6,7 +6,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package commons.remoting.responder
+package commons.remoting
 {
 	import mockolate.runner.MockolateRunner;
 	MockolateRunner

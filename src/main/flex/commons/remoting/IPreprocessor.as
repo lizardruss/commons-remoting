@@ -1,4 +1,4 @@
-package commons.remoting.preprocessor
+package commons.remoting
 {
 	public interface IPreprocessor
 	{

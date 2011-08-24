@@ -1,4 +1,4 @@
-package commons.remoting.responder
+package commons.remoting
 {
 	import flash.utils.getQualifiedClassName;
 

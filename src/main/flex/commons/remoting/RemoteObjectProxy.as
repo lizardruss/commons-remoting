@@ -6,9 +6,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-package commons.remoting.proxy
+package commons.remoting
 {
-	import commons.remoting.preprocessor.IPreprocessor;
 
 	import flash.utils.flash_proxy;
 
