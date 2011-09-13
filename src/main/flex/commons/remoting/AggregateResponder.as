@@ -47,7 +47,7 @@ package commons.remoting
 					{
 						if (Log.isInfo())
 						{
-							logger.info("Invoking responder.result {0} with data {1}", [responder, data]);
+							logger.info("Invoking responder.result {0} with data {1}", responder, data);
 						}
 						responder.result(data);
 					}
@@ -73,7 +73,7 @@ package commons.remoting
 					{
 						if (Log.isInfo())
 						{
-							logger.info("Invoking responder.fault {0} with data {1}", [responder, info]);
+							logger.info("Invoking responder.fault {0} with data {1}", responder, info);
 						}
 						responder.fault(info);
 					}

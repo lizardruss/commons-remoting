@@ -2,7 +2,7 @@ package commons.remoting
 {
 	public interface IPreprocessor
 	{
-		function preprocess(args:Array):void;
+		function preprocess(methodName:String, args:Array):void;
 	}
 }
 

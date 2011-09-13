@@ -40,7 +40,7 @@ package commons.remoting
 			{
 				for each (var preprocessor:IPreprocessor in preprocessors)
 				{
-					preprocessor.preprocess(parameters);
+					preprocessor.preprocess(name as String, parameters);
 				}
 			}
 
@@ -48,7 +48,7 @@ package commons.remoting
 			var token:AsyncToken=super.callProperty(name, parameters);
 
 			// Add the responders.
-			if (responders)
+			if (token && responders)
 			{
 				for each (var responder:IResponder in responders)
 				{
