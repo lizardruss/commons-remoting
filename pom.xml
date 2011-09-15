@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>commons-remoting</groupId>
@@ -166,7 +166,7 @@
 			<version>${flex.sdk.version}</version>
 			<type>rb.swc</type>
 		</dependency>
-		
+
 		<!-- PROJECT DEPENDENCIES -->
 		<dependency>
 			<groupId>org.as3commons</groupId>
@@ -198,7 +198,7 @@
 			<artifactId>hamcrest-as3</artifactId>
 			<version>1.1</version>
 			<type>swc</type>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>mockolate</groupId>
