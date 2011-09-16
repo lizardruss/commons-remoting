@@ -22,15 +22,15 @@
    <mxml:Responder id="loggingResponder">
       <mxml:result>
          <![CDATA[
-				var resultEvent:ResultEvent = event as ResultEvent;
-				logger.info(resultEvent.result as String);
-			]]>
+            var resultEvent:ResultEvent = event as ResultEvent;
+            logger.info(resultEvent.result as String);
+         ]]>
       </mxml:result>
       <mxml:fault>
          <![CDATA[
-				var faultEvent:FaultEvent = event as FaultEvent;
-				logger.info(faultEvent.fault.faultDetail as String);
-			]]>
+            var faultEvent:FaultEvent = event as FaultEvent;
+            logger.info(faultEvent.fault.faultDetail as String);
+         ]]>
       </mxml:fault>
    </mxml:Responder>
 
@@ -44,9 +44,9 @@
       </remoting:faultMatcher>
       <remoting:fault>
          <![CDATA[
-				var faultEvent:FaultEvent = event as FaultEvent;
-				Alert.show(faultEvent.fault.faultDetail);
-			]]>
+            var faultEvent:FaultEvent = event as FaultEvent;
+            Alert.show(faultEvent.fault.faultDetail);
+         ]]>
       </remoting:fault>
    </remoting:MatcherResponder>
 
