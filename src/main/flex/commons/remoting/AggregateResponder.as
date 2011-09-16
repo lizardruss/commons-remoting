@@ -5,6 +5,9 @@ package commons.remoting
 	import mx.logging.ILogger;
 	import mx.logging.Log;
 	import mx.rpc.IResponder;
+	import mx.utils.ArrayUtil;
+
+	import org.as3commons.lang.ArrayUtils;
 
 	[DefaultProperty("responders")]
 	/**
@@ -35,6 +38,17 @@ package commons.remoting
 		public function AggregateResponder()
 		{
 			super();
+			responders = [];
+		}
+
+		public function addResponder(responder:IResponder):void
+		{
+			responders.push(responder);
+		}
+
+		public function removeResponder(responder:IResponder):void
+		{
+			ArrayUtils.removeItem(responders, responder);
 		}
 
 		public function result(data:Object):void

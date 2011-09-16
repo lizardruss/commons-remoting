@@ -50,10 +50,9 @@ package commons.remoting
 			// Add the responders.
 			if (token && responders)
 			{
-				for each (var responder:IResponder in responders)
-				{
-					token.addResponder(responder);
-				}
+				var aggregateResponder:AggregateResponder = new AggregateResponder();
+				aggregateResponder.responders = responders;
+				token.addResponder(aggregateResponder);
 			}
 		}
 	}
