@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <remoting:RemoteObjectProxy xmlns:fx="http://ns.adobe.com/mxml/2009"
-							xmlns:s="library://ns.adobe.com/flex/spark"
-							xmlns:mx="library://ns.adobe.com/flex/mx"
-							xmlns:remoting="commons.remoting.*"
-							xmlns:hamcrest="http://hamcrest.org/2009/mxml" xmlns:mxml="commons.remoting.mxml.*">
+                            xmlns:s="library://ns.adobe.com/flex/spark"
+                            xmlns:mx="library://ns.adobe.com/flex/mx"
+                            xmlns:remoting="commons.remoting.*"
+                            xmlns:hamcrest="http://hamcrest.org/2009/mxml"
+                            xmlns:mxml="commons.remoting.mxml.*">
 
-	<fx:Script>
-		<![CDATA[
-			import mx.controls.Alert;
-			import mx.logging.ILogger;
-			import mx.logging.Log;
-			import mx.messaging.errors.ChannelError;
-			import mx.rpc.events.FaultEvent;
-			import mx.rpc.events.ResultEvent;
+   <fx:Script>
+      <![CDATA[
+         import mx.controls.Alert;
+         import mx.logging.ILogger;
+         import mx.logging.Log;
+         import mx.messaging.errors.ChannelError;
+         import mx.rpc.events.FaultEvent;
+         import mx.rpc.events.ResultEvent;
 
-			public static const logger:ILogger=Log.getLogger(getQualifiedClassName(AccountService).replace("::", ""));
-		]]>
-	</fx:Script>
+         public static const logger:ILogger=Log.getLogger(getQualifiedClassName(AccountService).replace("::", ""));
+      ]]>
+   </fx:Script>
 
-	<mxml:Responder id="loggingResponder">
-		<mxml:result>
-			<![CDATA[
+   <mxml:Responder id="loggingResponder">
+      <mxml:result>
+         <![CDATA[
 				var resultEvent:ResultEvent = event as ResultEvent;
 				logger.info(resultEvent.result as String);
 			]]>
-		</mxml:result>
-		<mxml:fault>
-			<![CDATA[
+      </mxml:result>
+      <mxml:fault>
+         <![CDATA[
 				var faultEvent:FaultEvent = event as FaultEvent;
 				logger.info(faultEvent.fault.faultDetail as String);
 			]]>
-		</mxml:fault>
-	</mxml:Responder>
+      </mxml:fault>
+   </mxml:Responder>
 
-	<remoting:MatcherResponder id="socketConnectionErrorResponder">
-		<remoting:faultMatcher>
-			<hamcrest:HasProperty property="fault">
-				<hamcrest:HasProperty property="rootCause">
-					<hamcrest:InstanceOf type="{ChannelError}" />
-				</hamcrest:HasProperty>
-			</hamcrest:HasProperty>
-		</remoting:faultMatcher>
-		<remoting:fault>
-			<![CDATA[
+   <remoting:MatcherResponder id="socketConnectionErrorResponder">
+      <remoting:faultMatcher>
+         <hamcrest:HasProperty property="fault">
+            <hamcrest:HasProperty property="rootCause">
+               <hamcrest:InstanceOf type="{ChannelError}"/>
+            </hamcrest:HasProperty>
+         </hamcrest:HasProperty>
+      </remoting:faultMatcher>
+      <remoting:fault>
+         <![CDATA[
 				var faultEvent:FaultEvent = event as FaultEvent;
 				Alert.show(faultEvent.fault.faultDetail);
 			]]>
-		</remoting:fault>
-	</remoting:MatcherResponder>
+      </remoting:fault>
+   </remoting:MatcherResponder>
 
 </remoting:RemoteObjectProxy>
